@@ -1,0 +1,9 @@
+{
+  "name": "cardapio-digital",
+  "version": "1.0.0",
+  "description": "Cardápio digital com pedidos via WhatsApp",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000"
+  }
+}

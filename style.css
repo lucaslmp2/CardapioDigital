@@ -1,0 +1,350 @@
+/* estilo básico para o cardápio */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8e1;
+    color: #333;
+}
+header, footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffeb3b;
+}
+main {
+    padding: 1rem;
+}
+.category {
+    margin-bottom: 2rem;
+}
+.category h2 {
+    background-color: #fdd835;
+    padding: 0.5rem;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.item button {
+    margin-left: 0.5rem;
+}
+#whatsapp-button {
+    padding: 1rem 2rem;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#whatsapp-button:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+/* Modal styles */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal.hidden {
+    display: none;
+}
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.close-btn {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #aaa;
+}
+.close-btn:hover {
+    color: #000;
+}
+#modal-title {
+    margin: 0 0 1rem 0;
+    clear: both;
+    color: #333;
+}
+.modal-body {
+    margin: 1.5rem 0;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+.btn-primary,
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #ffeb3b;
+    color: #333;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color: #fdd835;
+}
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+.pizza-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.pizza-option-btn {
+    padding: 0.75rem;
+    text-align: left;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.pizza-option-btn:hover {
+    background-color: #fff8e1;
+    border-color: #ffeb3b;
+}
+
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.fab:hover {
+    background-color: #1ea952;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.fab:active {
+    transform: scale(0.95);
+}
+
+.fab.disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.fab.disabled:hover {
+    background-color: #a5d6a7;
+    transform: scale(1);
+}
+
+.fab-counter {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff5722;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.fab-counter.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .fab {
+        bottom: 1rem;
+        right: 1rem;
+        width: 56px;
+        height: 56px;
+        font-size: 1.3rem;
+    }
+}
+
+/* Order review modal styles */
+.order-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    background-color: #f9f9f9;
+}
+
+.order-item-info {
+    flex: 1;
+}
+
+.order-item-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.order-item-price {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.order-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.quantity-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.quantity-display {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+.order-total {
+    border-top: 2px solid #ddd;
+    padding-top: 1rem;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-total .total-label {
+    margin-right: 1rem;
+}
+
+.order-total .total-amount {
+    color: #4caf50;
+}

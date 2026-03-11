@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cardápio Esfiharia Mix</h1>
+        <p>Escolha seus itens e compartilhe a comanda via WhatsApp</p>
+    </header>
+    <main id="menu-container">
+        <!-- menu será inserido aqui dinamicamente -->
+    </main>
+    <footer>
+        <!-- Footer content removed, using floating button instead -->
+    </footer>
+
+    <!-- Floating Action Button for WhatsApp -->
+    <button id="whatsapp-fab" class="fab">
+        <span id="fab-icon"></span>
+        <span id="fab-counter" class="fab-counter hidden">0</span>
+    </button>
+
+    <!-- Modal for item selection -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <h2 id="modal-title">Selecione o item</h2>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="quantity">Quantidade:</label>
+                    <input type="number" id="quantity" min="1" value="1" />
+                </div>
+                <div class="form-group">
+                    <label for="observations">Observações (opcional):</label>
+                    <textarea id="observations" placeholder="Ex: sem cebola, extra queijo..."></textarea>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button id="cancel-btn" class="btn-secondary">Cancelar</button>
+                <button id="confirm-btn" class="btn-primary">Adicionar ao pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for pizza flavor selection -->
+    <div id="pizza-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-pizza-modal" class="close-btn">&times;</button>
+            <h2>Selecione o segundo sabor (opcional)</h2>
+            
+            <div class="modal-body">
+                <div id="pizza-list" class="pizza-options">
+                    <!-- pizza flavors will be inserted here -->
+                </div>
+                <button id="skip-second-flavor" class="btn-secondary full-width">Sem segundo sabor</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for add-ons -->
+    <div id="addon-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-addon-modal" class="close-btn">&times;</button>
+            <h2>Ingrediente extra (opcional)</h2>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" id="addon-input" placeholder="Ex: bacon, milho extra..." />
+                    <small>Taxa fixa de R$ 5,00 por ingrediente</small>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button id="skip-addon" class="btn-secondary">Sem adicional</button>
+                <button id="confirm-addon" class="btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for order review -->
+    <div id="order-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-order-modal" class="close-btn">&times;</button>
+            <h2>Revisar Pedido</h2>
+            
+            <div class="modal-body">
+                <div id="order-items" class="order-items">
+                    <!-- Order items will be inserted here -->
+                </div>
+                <div id="order-total" class="order-total">
+                    <!-- Total will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button id="continue-shopping" class="btn-secondary">Continuar Comprando</button>
+                <button id="send-order" class="btn-primary">Enviar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
